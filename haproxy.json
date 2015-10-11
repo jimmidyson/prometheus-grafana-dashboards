@@ -1,0 +1,644 @@
+{
+  "id": 1,
+  "title": "HAProxy",
+  "originalTitle": "HAProxy",
+  "tags": [],
+  "style": "dark",
+  "timezone": "browser",
+  "editable": true,
+  "hideControls": false,
+  "sharedCrosshair": false,
+  "rows": [
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(40, 237, 48, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "percent",
+          "id": 9,
+          "interval": null,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "calculatedInterval": "30s",
+              "datasourceErrors": {},
+              "errors": {},
+              "expr": "sum(haproxy_up) / count(haproxy_up) *100",
+              "interval": "",
+              "intervalFactor": 1,
+              "metric": "",
+              "prometheusLink": "http://prometheus.127.0.0.1.xip.io/graph#%5B%7B%22expr%22%3A%22sum(haproxy_up)%20%2F%20count(haproxy_up)%20*100%22%2C%22range_input%22%3A%223540s%22%2C%22end_input%22%3A%222015-10-02%2021%3A10%22%2C%22step_input%22%3A%22%22%2C%22tab%22%3A0%7D%5D",
+              "refId": "A"
+            }
+          ],
+          "thresholds": "0,100",
+          "title": "Servers Healthy",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "none",
+          "id": 1,
+          "interval": null,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "/s",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "calculatedInterval": "30s",
+              "datasourceErrors": {},
+              "errors": {},
+              "expr": "sum(irate(haproxy_frontend_http_requests_total[5m]))",
+              "interval": "",
+              "intervalFactor": 1,
+              "metric": "",
+              "prometheusLink": "http://prometheus.127.0.0.1.xip.io/graph#%5B%7B%22expr%22%3A%22sum(irate(haproxy_frontend_http_requests_total%5B5m%5D))%22%2C%22range_input%22%3A%223540s%22%2C%22end_input%22%3A%222015-10-02%2021%3A10%22%2C%22step_input%22%3A%22%22%2C%22tab%22%3A0%7D%5D",
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "title": "Requests",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "none",
+          "id": 2,
+          "interval": null,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "/s",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "calculatedInterval": "30s",
+              "datasourceErrors": {},
+              "errors": {},
+              "expr": "sum(irate(haproxy_frontend_requests_denied_total[5m]))",
+              "interval": "",
+              "intervalFactor": 1,
+              "metric": "",
+              "prometheusLink": "http://prometheus.127.0.0.1.xip.io/graph#%5B%7B%22expr%22%3A%22sum(irate(haproxy_frontend_requests_denied_total%5B5m%5D))%22%2C%22range_input%22%3A%223540s%22%2C%22end_input%22%3A%222015-10-02%2021%3A10%22%2C%22step_input%22%3A%22%22%2C%22tab%22%3A0%7D%5D",
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "title": "Requests Denied",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": null,
+          "decimals": null,
+          "editable": true,
+          "error": false,
+          "format": "Bps",
+          "id": 3,
+          "interval": null,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "calculatedInterval": "30s",
+              "datasourceErrors": {},
+              "errors": {},
+              "expr": "sum(irate(haproxy_frontend_bytes_in_total[5m]))",
+              "interval": "",
+              "intervalFactor": 1,
+              "metric": "",
+              "prometheusLink": "http://prometheus.127.0.0.1.xip.io/graph#%5B%7B%22expr%22%3A%22sum(irate(haproxy_frontend_bytes_in_total%5B5m%5D))%22%2C%22range_input%22%3A%223541s%22%2C%22end_input%22%3A%222015-10-02%2021%3A10%22%2C%22step_input%22%3A%22%22%2C%22tab%22%3A0%7D%5D",
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "title": "Data In",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": null,
+          "decimals": 0,
+          "editable": true,
+          "error": false,
+          "format": "none",
+          "id": 4,
+          "interval": null,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "calculatedInterval": "30s",
+              "datasourceErrors": {},
+              "errors": {},
+              "expr": "sum(haproxy_frontend_current_sessions)",
+              "interval": "",
+              "intervalFactor": 1,
+              "metric": "",
+              "prometheusLink": "http://prometheus.127.0.0.1.xip.io/graph#%5B%7B%22expr%22%3A%22sum(haproxy_frontend_current_sessions)%22%2C%22range_input%22%3A%223540s%22%2C%22end_input%22%3A%222015-10-02%2021%3A10%22%2C%22step_input%22%3A%22%22%2C%22tab%22%3A0%7D%5D",
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "title": "Current Sessions",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "Bps",
+          "id": 5,
+          "interval": null,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "calculatedInterval": "30s",
+              "datasourceErrors": {},
+              "errors": {},
+              "expr": "sum(irate(haproxy_frontend_bytes_out_total[5m]))",
+              "interval": "",
+              "intervalFactor": 1,
+              "metric": "",
+              "prometheusLink": "http://prometheus.127.0.0.1.xip.io/graph#%5B%7B%22expr%22%3A%22sum(irate(haproxy_frontend_bytes_out_total%5B5m%5D))%22%2C%22range_input%22%3A%223540s%22%2C%22end_input%22%3A%222015-10-02%2021%3A10%22%2C%22step_input%22%3A%22%22%2C%22tab%22%3A0%7D%5D",
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "title": "Data Out",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        }
+      ],
+      "showTitle": false,
+      "title": "Row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 6,
+          "leftYAxisLabel": "Requests/s",
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "hideEmpty": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [
+            {
+              "dashUri": "db/haproxy-frontends",
+              "dashboard": "HAProxy - Frontends",
+              "keepTime": true,
+              "title": "Drill down",
+              "type": "dashboard"
+            }
+          ],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "calculatedInterval": "20s",
+              "datasourceErrors": {},
+              "errors": {},
+              "expr": "sum by (frontend)(irate(haproxy_frontend_http_requests_total[5m]))",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "{{frontend}}",
+              "metric": "",
+              "prometheusLink": "http://prometheus.127.0.0.1.xip.io/graph#%5B%7B%22expr%22%3A%22sum%20by%20(frontend)(irate(haproxy_frontend_http_requests_total%5B5m%5D))%22%2C%22range_input%22%3A%223540s%22%2C%22end_input%22%3A%222015-10-02%2016%3A10%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D",
+              "refId": "A"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Frontend Requests",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "none",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 7,
+          "leftYAxisLabel": "Responses/s",
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "hideEmpty": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [
+            {
+              "dashUri": "db/haproxy-backends",
+              "dashboard": "HAProxy - Backends",
+              "includeVars": true,
+              "keepTime": true,
+              "title": "Drill down",
+              "type": "dashboard"
+            }
+          ],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "calculatedInterval": "10s",
+              "datasourceErrors": {},
+              "errors": {},
+              "expr": "sum by (backend)(irate(haproxy_backend_http_responses_total[5m]))",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "{{backend}}",
+              "metric": "",
+              "prometheusLink": "http://prometheus.127.0.0.1.xip.io/graph#%5B%7B%22expr%22%3A%22sum%20by%20(backend)(irate(haproxy_backend_http_responses_total%5B5m%5D))%22%2C%22range_input%22%3A%223540s%22%2C%22end_input%22%3A%222015-10-02%2020%3A10%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D",
+              "refId": "A"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Backend Responses",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "none",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 8,
+          "leftYAxisLabel": "Sessions",
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "hideEmpty": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "calculatedInterval": "20s",
+              "datasourceErrors": {},
+              "errors": {},
+              "expr": "sum(haproxy_frontend_current_sessions)",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "Current",
+              "metric": "",
+              "prometheusLink": "http://prometheus.127.0.0.1.xip.io/graph#%5B%7B%22expr%22%3A%22sum(haproxy_frontend_current_sessions)%22%2C%22range_input%22%3A%223540s%22%2C%22end_input%22%3A%222015-10-02%2016%3A10%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D",
+              "refId": "A"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Current Sessions",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "none",
+            "short"
+          ]
+        }
+      ],
+      "title": "New row"
+    }
+  ],
+  "time": {
+    "from": "now-1h",
+    "to": "now-1m"
+  },
+  "timepicker": {
+    "now": true,
+    "nowDelay": "1m",
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "templating": {
+    "list": []
+  },
+  "annotations": {
+    "list": []
+  },
+  "schemaVersion": 7,
+  "version": 71,
+  "links": []
+}
