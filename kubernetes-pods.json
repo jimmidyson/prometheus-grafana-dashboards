@@ -45,7 +45,7 @@
               "selected": false
             }
           },
-          "span": 4,
+          "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -117,7 +117,7 @@
             }
           },
           "seriesOverrides": [],
-          "span": 4,
+          "span": 5,
           "stack": false,
           "steppedLine": false,
           "targets": [
@@ -196,7 +196,7 @@
             }
           },
           "seriesOverrides": [],
-          "span": 4,
+          "span": 5,
           "stack": false,
           "steppedLine": false,
           "targets": [
