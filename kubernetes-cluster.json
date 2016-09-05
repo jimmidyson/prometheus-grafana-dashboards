@@ -46,7 +46,7 @@
           },
           "targets": [
             {
-              "expr": "sum(container_memory_usage_bytes{kubernetes_role=\"node\", id=\"/\"}) / sum(machine_memory_bytes{kubernetes_role=\"node\"}) * 100",
+              "expr": "sum(container_memory_usage_bytes{job=\"kubernetes-nodes\", id=\"/\"}) / sum(machine_memory_bytes{job=\"kubernetes-nodes\"}) * 100",
               "intervalFactor": 2,
               "refId": "A"
             }
@@ -96,7 +96,7 @@
           },
           "targets": [
             {
-              "expr": "sum(machine_memory_bytes{kubernetes_role=\"node\"})",
+              "expr": "sum(machine_memory_bytes{job=\"kubernetes-nodes\"})",
               "intervalFactor": 2,
               "refId": "A"
             }
@@ -146,7 +146,7 @@
           },
           "targets": [
             {
-              "expr": "sum(container_memory_usage_bytes{kubernetes_role=\"node\", id=\"/\"})",
+              "expr": "sum(container_memory_usage_bytes{job=\"kubernetes-nodes\", id=\"/\"})",
               "intervalFactor": 2,
               "metric": "container_memory_usage_bytes",
               "refId": "A"
@@ -197,7 +197,7 @@
           },
           "targets": [
             {
-              "expr": "sum(container_memory_working_set_bytes{kubernetes_role=\"node\", id=\"/\"})",
+              "expr": "sum(container_memory_working_set_bytes{job=\"kubernetes-nodes\", id=\"/\"})",
               "intervalFactor": 2,
               "metric": "container_memory_usage_bytes",
               "refId": "A"
@@ -248,7 +248,7 @@
           },
           "targets": [
             {
-              "expr": "100 * sum(container_fs_usage_bytes{kubernetes_role=\"node\", id=\"/\"}) / sum(container_fs_limit_bytes{kubernetes_role=\"node\", id=\"/\"})",
+              "expr": "100 * sum(container_fs_usage_bytes{job=\"kubernetes-nodes\", id=\"/\"}) / sum(container_fs_limit_bytes{job=\"kubernetes-nodes\", id=\"/\"})",
               "intervalFactor": 2,
               "refId": "A"
             }
@@ -314,7 +314,7 @@
           },
           "targets": [
             {
-              "expr": "time() - container_start_time_seconds{kubernetes_role=\"node\", id=\"/\", instance=\"$node\"}",
+              "expr": "time() - container_start_time_seconds{job=\"kubernetes-nodes\", id=\"/\", instance=~\"$node\"}",
               "intervalFactor": 2,
               "refId": "A"
             }
@@ -387,21 +387,21 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "machine_memory_bytes{kubernetes_role=\"node\", instance=\"$node\"}",
+              "expr": "machine_memory_bytes{job=\"kubernetes-nodes\", instance=~\"$node\"}",
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Total",
               "refId": "A"
             },
             {
-              "expr": "container_memory_usage_bytes{kubernetes_role=\"node\", id=\"/\", instance=\"$node\"}",
+              "expr": "container_memory_usage_bytes{job=\"kubernetes-nodes\", id=\"/\", instance=~\"$node\"}",
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Used",
               "refId": "B"
             },
             {
-              "expr": "container_memory_working_set_bytes{kubernetes_role=\"node\", id=\"/\", instance=\"$node\"}",
+              "expr": "container_memory_working_set_bytes{job=\"kubernetes-nodes\", id=\"/\", instance=~\"$node\"}",
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Working",
@@ -475,7 +475,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "100 * scalar(sum(irate(container_cpu_usage_seconds_total{kubernetes_role=\"node\", id=\"/\", instance=\"$node\"}[5m]))) / machine_cpu_cores{kubernetes_role=\"node\", instance=\"$node\"}",
+              "expr": "100 * scalar(sum(irate(container_cpu_usage_seconds_total{job=\"kubernetes-nodes\", id=\"/\", instance=~\"$node\"}[5m]))) / machine_cpu_cores{job=\"kubernetes-nodes\", instance=~\"$node\"}",
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "",
@@ -548,7 +548,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "100 * sum(container_fs_usage_bytes{kubernetes_role=\"node\", id=\"/\", instance=\"$node\"}) / sum(container_fs_limit_bytes{kubernetes_role=\"node\", id=\"/\", instance=\"$node\"})",
+              "expr": "100 * sum(container_fs_usage_bytes{job=\"kubernetes-nodes\", id=\"/\", instance=~\"$node\"}) / sum(container_fs_limit_bytes{job=\"kubernetes-nodes\", id=\"/\", instance=~\"$node\"})",
               "intervalFactor": 2,
               "refId": "A"
             }

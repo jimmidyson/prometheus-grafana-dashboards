@@ -54,7 +54,7 @@
           },
           "targets": [
             {
-              "expr": "time() - max(container_start_time_seconds{kubernetes_role=\"node\", kubernetes_namespace=\"$namespace\", kubernetes_pod_name=\"$pod\"})",
+              "expr": "time() - max(container_start_time_seconds{job=\"kubernetes-nodes\", kubernetes_namespace=~\"$namespace\", kubernetes_pod_name=~\"$pod\"})",
               "intervalFactor": 2,
               "refId": "A"
             }
@@ -122,14 +122,14 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(container_memory_usage_bytes{kubernetes_role=\"node\", kubernetes_namespace=\"$namespace\", kubernetes_pod_name=\"$pod\"})",
+              "expr": "sum(container_memory_usage_bytes{job=\"kubernetes-nodes\", kubernetes_namespace=~\"$namespace\", kubernetes_pod_name=~\"$pod\"})",
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Used",
               "refId": "A"
             },
             {
-              "expr": "sum(container_memory_working_set_bytes{kubernetes_role=\"node\", kubernetes_namespace=\"$namespace\", kubernetes_pod_name=\"$pod\"})",
+              "expr": "sum(container_memory_working_set_bytes{job=\"kubernetes-nodes\", kubernetes_namespace=~\"$namespace\", kubernetes_pod_name=~\"$pod\"})",
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Working",
@@ -201,20 +201,20 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(irate(container_cpu_usage_seconds_total{kubernetes_role=\"node\", kubernetes_namespace=\"$namespace\", kubernetes_pod_name=\"$pod\"}[5m]))",
+              "expr": "sum(irate(container_cpu_usage_seconds_total{job=\"kubernetes-nodes\", kubernetes_namespace=~\"$namespace\", kubernetes_pod_name=~\"$pod\"}[5m]))",
               "intervalFactor": 2,
               "legendFormat": "Total",
               "refId": "A"
             },
             {
-              "expr": "sum(irate(container_cpu_system_seconds_total{kubernetes_role=\"node\", kubernetes_namespace=\"$namespace\", kubernetes_pod_name=\"$pod\"}[5m]))",
+              "expr": "sum(irate(container_cpu_system_seconds_total{job=\"kubernetes-nodes\", kubernetes_namespace=~\"$namespace\", kubernetes_pod_name=~\"$pod\"}[5m]))",
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Kernel",
               "refId": "B"
             },
             {
-              "expr": "sum(irate(container_cpu_user_seconds_total{kubernetes_role=\"node\", kubernetes_namespace=\"$namespace\", kubernetes_pod_name=\"$pod\"}[5m]))",
+              "expr": "sum(irate(container_cpu_user_seconds_total{job=\"kubernetes-nodes\", kubernetes_namespace=~\"$namespace\", kubernetes_pod_name=~\"$pod\"}[5m]))",
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "User",
@@ -324,7 +324,7 @@
             "selected": true
           }
         ],
-        "query": "container_start_time_seconds{kubernetes_namespace=\"$namespace\"}",
+        "query": "container_start_time_seconds{kubernetes_namespace=~\"$namespace\"}",
         "refresh": true,
         "refresh_on_load": true,
         "regex": "/kubernetes_pod_name=\"([^\"]+)\"/",
