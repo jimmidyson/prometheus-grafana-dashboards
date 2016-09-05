@@ -71,21 +71,21 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.5\",resource=\"$resource\",verb=\"$verb\"}",
+              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.5\",resource=~\"$resource\",verb=~\"$verb\"}",
               "interval": "",
               "intervalFactor": 1,
               "legendFormat": "{{quantile}}",
               "refId": "A"
             },
             {
-              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.9\",resource=\"$resource\",verb=\"$verb\"}",
+              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.9\",resource=~\"$resource\",verb=~\"$verb\"}",
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "{{quantile}}",
               "refId": "B"
             },
             {
-              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.99\",resource=\"$resource\",verb=\"$verb\"}",
+              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.99\",resource=~\"$resource\",verb=~\"$verb\"}",
               "intervalFactor": 2,
               "legendFormat": "{{quantile}}",
               "refId": "C"
@@ -163,21 +163,21 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.5\",resource=\"$resource\",verb=\"$verb\"}",
+              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.5\",resource=~\"$resource\",verb=~\"$verb\"}",
               "interval": "",
               "intervalFactor": 1,
               "legendFormat": "{{quantile}}",
               "refId": "A"
             },
             {
-              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.9\",resource=\"$resource\",verb=\"$verb\"}",
+              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.9\",resource=~\"$resource\",verb=~\"$verb\"}",
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "{{quantile}}",
               "refId": "B"
             },
             {
-              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.99\",resource=\"$resource\",verb=\"$verb\"}",
+              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.99\",resource=~\"$resource\",verb=~\"$verb\"}",
               "intervalFactor": 2,
               "legendFormat": "{{quantile}}",
               "refId": "C"
@@ -257,21 +257,21 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.5\",resource=\"$resource\",verb=\"$verb\"}",
+              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.5\",resource=~\"$resource\",verb=~\"$verb\"}",
               "interval": "",
               "intervalFactor": 1,
               "legendFormat": "{{quantile}}",
               "refId": "A"
             },
             {
-              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.9\",resource=\"$resource\",verb=\"$verb\"}",
+              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.9\",resource=~\"$resource\",verb=~\"$verb\"}",
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "{{quantile}}",
               "refId": "B"
             },
             {
-              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.99\",resource=\"$resource\",verb=\"$verb\"}",
+              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.99\",resource=~\"$resource\",verb=~\"$verb\"}",
               "intervalFactor": 2,
               "legendFormat": "{{quantile}}",
               "refId": "C"
@@ -351,21 +351,21 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.5\",resource=\"$resource\",verb=\"$verb\"}",
+              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.5\",resource=~\"$resource\",verb=~\"$verb\"}",
               "interval": "",
               "intervalFactor": 1,
               "legendFormat": "{{quantile}}",
               "refId": "A"
             },
             {
-              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.9\",resource=\"$resource\",verb=\"$verb\"}",
+              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.9\",resource=~\"$resource\",verb=~\"$verb\"}",
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "{{quantile}}",
               "refId": "B"
             },
             {
-              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.99\",resource=\"$resource\",verb=\"$verb\"}",
+              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.99\",resource=~\"$resource\",verb=~\"$verb\"}",
               "intervalFactor": 2,
               "legendFormat": "{{quantile}}",
               "refId": "C"
@@ -445,21 +445,21 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.5\",resource=\"$resource\",verb=\"$verb\"}",
+              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.5\",resource=~\"$resource\",verb=~\"$verb\"}",
               "interval": "",
               "intervalFactor": 1,
               "legendFormat": "{{quantile}}",
               "refId": "A"
             },
             {
-              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.9\",resource=\"$resource\",verb=\"$verb\"}",
+              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.9\",resource=~\"$resource\",verb=~\"$verb\"}",
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "{{quantile}}",
               "refId": "B"
             },
             {
-              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.99\",resource=\"$resource\",verb=\"$verb\"}",
+              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.99\",resource=~\"$resource\",verb=~\"$verb\"}",
               "intervalFactor": 2,
               "legendFormat": "{{quantile}}",
               "refId": "C"
@@ -539,21 +539,21 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.5\",resource=\"$resource\",verb=\"$verb\"}",
+              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.5\",resource=~\"$resource\",verb=~\"$verb\"}",
               "interval": "",
               "intervalFactor": 1,
               "legendFormat": "{{quantile}}",
               "refId": "A"
             },
             {
-              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.9\",resource=\"$resource\",verb=\"$verb\"}",
+              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.9\",resource=~\"$resource\",verb=~\"$verb\"}",
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "{{quantile}}",
               "refId": "B"
             },
             {
-              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.99\",resource=\"$resource\",verb=\"$verb\"}",
+              "expr": "apiserver_request_latencies_summary{job=\"kubernetes-cluster\",quantile=\"0.99\",resource=~\"$resource\",verb=~\"$verb\"}",
               "intervalFactor": 2,
               "legendFormat": "{{quantile}}",
               "refId": "C"
